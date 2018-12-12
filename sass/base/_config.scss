@@ -1,0 +1,192 @@
+@import "mixing";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  height: 100vh;
+  width: 100vw;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.main-container {
+  width: 300px;
+  height: 420px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: $shadow-light;
+
+  @include media(small) {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 130px;
+  text-align: center;
+
+  .hero {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .logo-container {
+    position: absolute;
+    top: 110px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid $primary-grey;
+    background-image: url("../../assets/imgs/startup-logo.png");
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.wrapper {
+  width: 300px;
+  height: 75px;
+}
+
+.container-details {
+  padding: 5px;
+
+  .container-details__items {
+    display: inline;
+    font-size: 0.650em;
+    padding: 0 10px;
+    color: $primary-grey;
+  }
+
+  .items__divider--grey {
+    color: $primary-grey;
+  }
+
+  .container-details__title {
+    margin: 10px 0 2px 10px;
+    font-size: 1em;
+    color: $primary-dark;
+    font-family: 'Noway-Medium', sans-serif;
+
+    .toggle-progress {
+      color: $green-highlight;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.650em;
+      font-weight: 400;
+      padding-left: 10px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+  .container-details__sub-title {
+    font-size: 0.650em;
+    font-weight: 400;
+    padding: 10px 0 15px 10px;
+  }
+
+  .progress-container--hide {
+    display: none;
+
+    .progress-percentage {
+      margin-left: 10px;
+    }
+
+    #progressbar {
+      width: 90%;
+      margin: 4px 10px;
+      border-bottom: 1px solid $light-grey;
+    }
+
+    #progressbar>div {
+      background-color: $primary-blue;
+      width: 80%;
+      height: 4px;
+      margin-bottom: -1px;
+    }
+
+    .progress-details__item {
+      display: inline-block;
+      font-size: 0.650em;
+      font-weight: 400;
+      padding: 10px;
+      color: $primary-dark;
+    }
+
+    .items__divider--dark {
+      color: $primary-dark;
+    }
+  }
+
+  .custom__hr {
+    width: 93%;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $light-grey;
+  }
+
+  .container-details__list {
+    list-style-position: inside;
+    padding-left: 15px;
+    text-indent: -16px;
+
+    li {
+      font-size: 0.5em;
+      list-style-type: none;
+      padding-left: 10px;
+      color: $primary-grey;
+
+
+      @include media(small) {
+        font-size: 0.650em;
+      }
+    }
+
+    li:before {
+      content: "\203A";
+      font-size: 2em;
+      padding-right: 10px;
+    }
+  }
+
+  a.button {
+    width: 120px;
+    height: 32px;
+    font-size: 0.7em;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid $primary-blue;
+    background: $primary-blue;
+    color: $primary-light;
+    display: block;
+    outline-style: none;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 8px 30px;
+    cursor: pointer;
+    text-decoration: none;
+
+    @include media(small) {
+      margin-top: 20px 0 10px 10px;
+    }
+  }
+
+  a.unfollow:hover,
+  a.unfollow:active {
+    background: $secondary-blue;
+  }
+
+}

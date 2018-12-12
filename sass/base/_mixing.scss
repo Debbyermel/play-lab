@@ -1,0 +1,50 @@
+//Fonts
+@font-face {
+  font-family: 'Noway-Regular';
+  font-weight: 300;
+  src: url('../../assets/fonts/Noway-Regular.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noway-Medium';
+  font-weight: 500;
+  src: url('../../assets/fonts/Noway-Medium.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-weight: 300;
+  src: url('../../assets/fonts/Lato-Black.ttf') format('truetype');
+}
+
+//Colours
+$primary-dark: #13252f;
+$primary-blue: #243d42;
+$secondary-blue: #305d60;
+$green-highlight: #7ac143;
+$primary-light: #fff;
+$primary-grey: #8b8888;
+$light-grey: #bdb5b5;
+$shadow-light: 0 2em 5em rgba(0, 0, 0, .06);
+
+
+// Media-query mixin
+@mixin media($media) {
+  @if $media==small {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+  }
+
+  @else if $media==medium {
+    @media only screen and (min-width: 601px) and (max-width: 991px) {
+      @content;
+    }
+  }
+
+  @else if $media==large {
+    @media only screen and (min-width: 992px) and (max-width: 1200px) {
+      @content;
+    }
+  }
+}

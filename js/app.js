@@ -13,6 +13,7 @@ function toggleTittle() {
     tittle.innerHTML = "Ver progreso";
   }
 }
+
 $(function () {
   initiateFollow();
 });
@@ -20,26 +21,26 @@ $(function () {
 function initiateFollow() {
 
   $("a.unfollow").on({
-    mouseover: function () {
-      $(this).children("span").text("UnFollow");
-    },
     mouseout: function () {
-      $(this).children("span").text("Following");
+      $(this).children("span").text("Seguiendo");
+    },
+    mouseover: function () {
+      $(this).children("span").text("Dejar de seguir");
     },
     click: function () {
-      $(this).children("a.unfollow span").text("Follow");
+      $(this).children("a.unfollow span").text("Seguir proyecto");
       $(this).removeClass("unfollow");
       $(this).addClass("follow");
-      $(this).unbind();
+      $(this).off();
       initiateFollow();
     }
   });
 
   $("a.follow").on("click", function () {
-    $(this).children("span").text("UnFollow");
+    $(this).children("span").text("Dejar de seguir");
     $(this).removeClass("follow");
     $(this).addClass("unfollow");
-    $(this).unbind();
+    $(this).off();
     initiateFollow();
   });
 }

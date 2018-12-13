@@ -13,30 +13,29 @@ function toggleTittle() {
     tittle.innerHTML = "Ver progreso";
   }
 }
-
 $(function () {
   initiateFollow();
 });
 
-
 function initiateFollow() {
-  $("a.unfollow").bind("mouseover", function () {
-    $(this).children("span").text("UnFollow");
+
+  $("a.unfollow").on({
+    mouseover: function () {
+      $(this).children("span").text("UnFollow");
+    },
+    mouseout: function () {
+      $(this).children("span").text("Following");
+    },
+    click: function () {
+      $(this).children("a.unfollow span").text("Follow");
+      $(this).removeClass("unfollow");
+      $(this).addClass("follow");
+      $(this).unbind();
+      initiateFollow();
+    }
   });
 
-  $("a.unfollow").bind("mouseout", function () {
-    $(this).children("span").text("Following");
-  });
-
-  $("a.unfollow").bind("click", function () {
-    $(this).children("a.unfollow span").text("Follow");
-    $(this).removeClass("unfollow");
-    $(this).addClass("follow");
-    $(this).unbind();
-    initiateFollow();
-  });
-
-  $("a.follow").bind("click", function () {
+  $("a.follow").on("click", function () {
     $(this).children("span").text("UnFollow");
     $(this).removeClass("follow");
     $(this).addClass("unfollow");
